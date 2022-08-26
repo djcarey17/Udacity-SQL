@@ -1,0 +1,23 @@
+## I tried this first:
+
+SELECT accounts.name account, region.name Region, sale_reps.name sales_rep
+FROM sales_rep
+JOIN Region
+ON sales_reps.region_id = region.id
+FROM sales_rep
+JOIN account
+ON sales_reps.id = accounts.sales_rep_id
+WHERE region.name = 'Midwest'
+ORDER BY account.name;
+
+## Next I tried this:
+
+SELECT a.name account, r.name region, s.name sales_rep
+FROM s
+JOIN r
+ON sales_reps.region_id = region.id
+FROM s
+JOIN a
+ON sales_reps.id = accounts.sales_reps_id
+WHERE region.name = 'Midwest'
+ORDER by region.name;
